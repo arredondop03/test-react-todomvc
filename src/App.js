@@ -62,7 +62,7 @@ class App extends Component {
     // console.log(event.target.checked) 
     const todos = [...this.state.todos]; //copy of the whole array
 
-    todos[index] = {...todos[index],
+    todos[index] = {...todos[index], //this can also be Object.assign
     done: event.target.checked} //todo at that index will be this copy inside of the array
      //update value at that index
     //  console.log(todos)
@@ -85,7 +85,7 @@ class App extends Component {
   allDone(){
     const todos = this.state.todos.map(todo => {
       return{
-        title: todo.title,
+        title: todo.title, //can also do ...todo
         done:true
       }
     })
@@ -144,3 +144,4 @@ export default App;
 
 
 //CHECK minute 41 to commit to github
+//summary hour 1
