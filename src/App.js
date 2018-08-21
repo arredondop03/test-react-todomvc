@@ -1,5 +1,8 @@
 import React, { Component } from 'react'; //When creating a component
 //ALWAYS import react
+import NewTodoForm from './NewTodoForm'
+import TodoList from './TodoList'
+
 
 import './App.css';
 
@@ -103,34 +106,20 @@ class App extends Component {
       {/* This className refers to the class in html and has the NAme at the end
       to differ from the JS class in line 6 */}
       <h3>{this.state.message}</h3>
-      <form onSubmit={(event) => this.formSubmitted(event)}> {/*Here is where we call the fucntion when the form is submitted*/}
-        <label htmlFor="newTodo">New Todo </label> 
-        {/* we call is htmlFor so it know that is not a for loop */}
-        <input onChange={(event) => this.newTodoChanged(event)} id= "newTodo" name="newTodo" value={this.state.newTodo}/> 
-        {/* all self closing tags have to have the "/" */}
-        <button type="submit">Add Todo</button>
-      </form>
+        <NewTodoForm 
+          newTodo ={this.state.newTodo}
+          formSubmitted ={this.formSubmitted.bind(this)} //this is so when we call  this function "this" refers to app.js this 
+          //so setState actually exists
+          newTodoChanged = {this.newTodoChanged.bind(this)}
+          
+          />
       <button onClick={() => this.allDone()} >All done</button>
-      <ul>
-
-        {/* //the index is to know which checkbox is being checked */}
-    
-        {this.state.todos.map((todo, index) => { //map the array from array of object to array of jsx
-          return <li key={todo.title}>
-          <input onChange={(event) => this.toggleTodoDone(event, index)} type="checkbox" checked={todo.done} className="inputCheckBox"/>
-          {/* <span style={{
-            textDecoration: todo.done ? 'line-through' : 'inherit'
-            }}> {todo.title}</span> */}
-          {/* //explanation of double curly braces: outer says that whatever is inside is an expresion
-          inner: whatever is inside is an object */}
-
-          <span className={todo.done ? 'done' : ''}> {todo.title} </span> {/* This is a better way to put a dynamic class
-          instead of an inline style we git it a class and if the task is done the class will be "done " and if not then 
-          there will not be any class at all */}
-          <button onClick={() => this.removeTodo(index)}>Remove Todo</button>
-          </li> //READ keys in lis react
-        })}
-      </ul>
+      <TodoList 
+      todos = {this.state.todos} 
+      toggleTodoDone = {this.toggleTodoDone.bind(this)}
+      removeTodo = {this.removeTodo.bind(this)}
+      
+      />
        </div>
     );
   }
