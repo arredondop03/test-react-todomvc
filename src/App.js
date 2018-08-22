@@ -13,8 +13,9 @@ class App extends Component {
             //extending means getting all the fuctionality in this class
             //state= properties in the component
     this.state ={
-      message: 'Hello Coding Garden!!',
+      message: 'Todo',
       newTodo: '', //here is where the information that the user is inputing will be hold
+      
       todos: [{
         title: 'Learn React',
         done: false
@@ -22,7 +23,9 @@ class App extends Component {
     {
       title: 'Learn Jsx',
       done: false
-    }]
+    }],
+    
+
 
     } //here is where all the data of our application is going to go
   }
@@ -102,10 +105,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App"> 
+      <div className="wholeTodo">
+      <div className="app"> 
       {/* This className refers to the class in html and has the NAme at the end
       to differ from the JS class in line 6 */}
-      <h3>{this.state.message}</h3>
+      <p className="appTitle">{this.state.message}</p>
+      
         <NewTodoForm 
           newTodo ={this.state.newTodo}
           formSubmitted ={this.formSubmitted.bind(this)} //this is so when we call  this function "this" refers to app.js this 
@@ -113,13 +118,21 @@ class App extends Component {
           newTodoChanged = {this.newTodoChanged.bind(this)}
           
           />
-      <button onClick={() => this.allDone()} >All done</button>
+          <div className="buttonAndItems">
+          { this.state.todos.length > 0 ? 
+           <button className="allDoneButton textFont" onClick={() => this.allDone()} >All done</button> : 
+           null }
+      
       <TodoList 
       todos = {this.state.todos} 
       toggleTodoDone = {this.toggleTodoDone.bind(this)}
       removeTodo = {this.removeTodo.bind(this)}
       
       />
+      </div>
+
+            <strong className="textFont">{this.state.todos.length} {this.state.todos.length == 1 ? ' task left' : 'tasks left'}</strong>
+       </div>
        </div>
     );
   }

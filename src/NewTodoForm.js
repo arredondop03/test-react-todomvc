@@ -12,11 +12,11 @@ import React from 'react'; //When creating a component
 const NewTodoForm = (props) =>{
   return(
     <form onSubmit={props.formSubmitted}> {/*Here is where we call the fucntion when the form is submitted*/}
-        <label htmlFor="newTodo">New Todo </label> 
+        {/* <label htmlFor="newTodo">New Todo </label>  */}
         {/* we call is htmlFor so it know that is not a for loop */}
-        <input onChange={props.newTodoChanged} id= "newTodo" name="newTodo" value={props.newTodo}/> 
+        <input className="imputField textFont" onChange={props.newTodoChanged} id= "newTodo" name="newTodo" value={props.newTodo} placeholder="New Task"/> 
         {/* all self closing tags have to have the "/" */}
-        <button type="submit">Add Todo</button>
+        {/* <button type="submit">.</button> */}
       </form>
   )
 } //render function that gets props and returns the form

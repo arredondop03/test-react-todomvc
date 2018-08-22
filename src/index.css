@@ -1,7 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Lato';
+  font-weight: 100;
+  background-image: url('/images/casey-horner-788393-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center;
+  
 }
 
 .inputCheckBox{
@@ -17,3 +24,125 @@ ul{
 .done{
   text-decoration: line-through;
 }
+
+.wholeTodo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  color: white;
+}
+
+.app{
+  height: 80vh;
+  /* width: 40vw; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.appTitle{
+  font-size: 5em;
+  margin: 3%;
+}
+
+.imputField{
+  height: 7vh;
+  width: 30vw;
+  background-color: transparent;
+  font-size: 2.5em;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-color: white;
+  border-radius: 0;
+
+
+
+}
+input:focus {
+  outline:none;
+}
+
+.textFont{
+  color: white;
+  text-align: center;
+  font-size: 2em;
+
+  font-family: 'Lato';
+  font-weight: 150;
+}
+
+.buttonAndItems{
+  display: flex;
+  /* align-content: space-around; */
+  flex-direction: column;
+  height: 30vh;
+
+  /* justify-content: center; */
+  /* flex-grow: 2; */
+}
+li{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+ul{
+  padding: 0;
+}
+
+.allDoneButton{
+  width: 20vw;
+  align-self: center;
+  background-color: transparent;
+  color: white;
+  height: 5vh;
+  padding: 0;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+button{
+  background-color: transparent;
+  border-color: white;
+  border-width: 0.5px;
+}
+
+
+.x{
+  border-style: none;
+  font-size: 1em;
+  margin: 0;
+}
+
+
+@media (max-width: 576px) { 
+  .imputField{
+    width: 80vw;
+  }
+
+}
+
+/* @media (min-width: 1024px) { 
+ .x{
+   display: none;
+ }
+
+ #aja:hover .x {
+  display: inline;
+}
+  
+} */
+
+
+
+
+
+button:focus {outline:0;}

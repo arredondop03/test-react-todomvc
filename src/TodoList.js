@@ -7,7 +7,7 @@ import TodoItem from './TodoItem'
 //If i need something more than the event (for example the index) leave the event because we have the fat arrow funtion???
 const TodoList = (props) =>{
   return (
-    <ul>
+    <ul className="textFont">
 
 {/* //the index is to know which checkbox is being checked */}
 
@@ -22,7 +22,8 @@ const TodoList = (props) =>{
     /> 
   )//READ keys in lis react
 })}
-</ul>  
+</ul> 
+
   )
 }
 
