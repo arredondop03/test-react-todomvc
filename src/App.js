@@ -1,10 +1,10 @@
 import React, { Component } from 'react'; //When creating a component
 //ALWAYS import react
-import NewTodoForm from './NewTodoForm'
-import TodoList from './TodoList'
+import NewTodoForm from './components/NewTodoForm'
+import TodoList from './components/TodoList'
 
 
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
   constructor(){
@@ -131,7 +131,7 @@ class App extends Component {
       />
       </div>
 
-            <strong className="textFont">{this.state.todos.length} {this.state.todos.length == 1 ? ' task left' : 'tasks left'}</strong>
+            <strong className="textFont">{this.state.todos.length} {this.state.todos.length === 1 ? ' task left' : ' tasks left'}</strong>
        </div>
        </div>
     );
