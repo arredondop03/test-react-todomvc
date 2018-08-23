@@ -21,4 +21,6 @@ const NewTodoForm = (props) =>{
   )
 } //render function that gets props and returns the form
 
+
+//exporting
 export default NewTodoForm
